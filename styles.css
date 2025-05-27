@@ -1,0 +1,336 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #34495e;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.thesis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.title-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.title-container h2 {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.decoration {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.pillar {
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 60px;
+}
+
+.foundation {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    background-color: var(--dark);
+    bottom: 0;
+    left: 15px;
+}
+
+.timeline-section {
+    margin-bottom: 3rem;
+}
+
+.timeline-section h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-section h3 i {
+    margin-right: 1rem;
+    color: var(--secondary);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--secondary);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.timeline-content h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--white);
+}
+
+.chapters-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chapter {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.chapter:hover {
+    transform: translateY(-5px);
+}
+
+.chapter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light);
+}
+
+.chapter-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-right: 1rem;
+}
+
+.chapter h4 {
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+.chapter-content {
+    list-style: none;
+}
+
+.chapter-content li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.chapter-content i {
+    margin-right: 0.8rem;
+    color: var(--accent);
+    width: 20px;
+    text-align: center;
+}
+
+.problem-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.problem-box h5 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.objectives h5 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.objectives ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.objectives li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.objectives li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+.methodology-section {
+    margin-bottom: 3rem;
+}
+
+.methodology-section h3 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.methodology-section h3 i {
+    margin-right: 1rem;
+    color: var(--secondary);
+}
+
+.methodology-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.step-icon {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.step h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text);
+    border-top: 1px solid var(--light);
+}
+
+@media (max-width: 768px) {
+    .thesis-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .decoration {
+        margin-top: 2rem;
+    }
+    
+    .chapters-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 30px;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-marker {
+        left: -30px;
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
+    }
+}
